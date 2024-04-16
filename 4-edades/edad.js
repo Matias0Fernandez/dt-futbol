@@ -16,3 +16,38 @@ Escriba un programa que:
 Tip: consulten los métodos de la clase Date
 https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Date
 */
+const persona = {
+  nombre: 'Juan',
+  apodo: 'Juancito',
+  apellido: 'Lopes',
+  fechaNacimiento: '1995-4-23'
+}
+
+function edad(fechaNacimiento) {
+  const anioNac = new Date(fechaNacimiento).getFullYear();
+  const mesNac = new Date(fechaNacimiento).getMonth();
+  const diaNac = new Date(fechaNacimiento).getDate();
+
+  const anioActual = new Date().getFullYear();
+  const mesActual = new Date().getMonth();
+  const diaActual = new Date().getDate();
+  let edad = anioActual - anioNac;
+  if (mesNac < mesActual) {
+    edad = edad - 1
+    console.log('restado')
+    return edad
+  } else if (mesNac === mesActual) {
+    if (diaNac < diaActual) {
+      edad = edad - 1
+      return edad
+    }
+    return edad
+  }
+  return edad;
+}
+
+function Message(nombre, apodo, apellido, fechaNacimiento) {
+  const edadPersona = edad(fechaNacimiento);
+  console.log(`${nombre} "${apodo}" ${apellido} (${edadPersona} años)`);
+}
+Message(persona.nombre, persona.apodo, persona.apellido, persona.fechaNacimiento);

@@ -6,3 +6,7 @@ Escriba un programa que:
 - declare una variable "nombre" que será el nombre del director técnico (ustedes).
 - imprima en consola un mensaje saludando con el nombre usado.
 */
+
+const nombre = 'juanito'
+
+console.log(`hola ${juanito}`)
