@@ -9,10 +9,15 @@ Escriba un programa que:
 - guarde la información del jugador (nombre, apellido, apodo) de forma conveniente.
 - imprima en consola un mensaje en el formato: {nombre} "{apodo}" {apellido} (notesé las comillas es parte de lo impreso).
 */
-
 const jugador = {
     nombre: 'junior DC',
     apellido: 'Bautista',
     apodo: 'bauti'
 }
-console.log(jugador.nombre + ` "${jugador.apodo}" ` + jugador.apellido)
+
+
+function retornar() {
+    return jugador.nombre + ` " ${jugador.apodo} " ` + jugador.apellido
+}
+
+module.exports = { retornar };
